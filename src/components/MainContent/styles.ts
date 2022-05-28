@@ -38,7 +38,6 @@ export const PopUp = styled.div`
   border-radius: 4px;
   position: absolute;
   top: -35px;
-  visibility: hidden;
 `;
 
 export const Bar = styled.div<Props>`
@@ -59,4 +58,38 @@ export const BarWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+`;
+
+export const CardSummary = styled.div`
+  padding-top: 24px;
+
+  h2 {
+    color: var(--medium-brown);
+    font-weight: var(--fw-regular);
+    font-size: 16px;
+  }
+
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .total {
+      color: var(--dark-brown);
+      font-size: 32px;
+      font-weight: var(--fw-bold);
+    }
+
+    .summary-difference {
+      text-align: right;
+      span {
+        font-size: 14px;
+        color: var(--dark-brown);
+        font-weight: var(--fw-bold);
+      }
+      p {
+        font-size: 14px;
+        color: var(--medium-brown);
+      }
+    }
+  }
 `;
