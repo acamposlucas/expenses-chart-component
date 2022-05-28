@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Main = styled.main`
   border-radius: 14px;
   margin: 1rem;
+  max-width: 550px;
+  min-width: 345px;
 `;
 
 export const Card = styled.div`

@@ -21,6 +21,15 @@ export function MainContent() {
       .catch((err) => console.log(err));
   }, []);
 
+  function calculateTotal() {
+    let total = 0;
+    for (let i = 0; i < data.length; i++) {
+      total += data[i]["amount"];
+    }
+    return total;
+  }
+  calculateTotal();
+
   return (
     <Main>
       <Card>
@@ -42,9 +51,9 @@ export function MainContent() {
           })}
         </Chart>
         <CardSummary>
-          <h2>Total this month</h2>
+          <h2>Total this week</h2>
           <div className="box">
-            <span className="total">$478.33</span>
+            <span className="total">${calculateTotal()}</span>
             <div className="summary-difference">
               <span>+2.4%</span>
               <p>from last month</p>

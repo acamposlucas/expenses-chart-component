@@ -23,6 +23,6 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 16px;
         font-family: 'DM Sans', sans-serif;
         background-color: var(--cream);
-
+        padding: 2rem 0;
     }
 `;

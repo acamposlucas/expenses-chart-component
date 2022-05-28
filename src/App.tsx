@@ -7,8 +7,10 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Header />
-      <MainContent />
+      <div>
+        <Header />
+        <MainContent />
+      </div>
     </>
   );
 }
