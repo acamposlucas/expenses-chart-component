@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { Main } from "./styles";
+import { Bar, BarWrapper, Card, Chart, Main, PopUp } from "./styles";
 
 export function MainContent() {
   const [data, setData] = useState([]);
@@ -13,22 +13,20 @@ export function MainContent() {
   }, []);
   return (
     <Main>
-      <table>
-        <thead>
-          <tr>
-            <th>day</th>
-            <th>amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map(({ day, amount }) => (
-            <tr key={uuidv4()}>
-              <td>{day}</td>
-              <td>{amount}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <Card>
+        <h1>Spending - Last 7 days</h1>
+        <Chart>
+          {data.map(({ day, amount }) => {
+            return (
+              <BarWrapper key={uuidv4()}>
+                <PopUp>${amount}</PopUp>
+                <Bar height={amount} role="button" aria-pressed="false" />
+                <span>{day}</span>
+              </BarWrapper>
+            );
+          })}
+        </Chart>
+      </Card>
     </Main>
   );
 }
