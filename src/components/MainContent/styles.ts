@@ -29,26 +29,32 @@ export const Chart = styled.div`
   border-bottom: 3px solid var(--cream);
 `;
 
-type Props = {
-  height: number;
-};
-
 export const PopUp = styled.div`
+  visibility: hidden;
   background-color: var(--dark-brown);
   color: #fff;
-  padding: 0.2rem;
+  padding: 0.3rem;
   border-radius: 4px;
   position: absolute;
   top: -35px;
-`;
+  z-index: 100;
+  `;
 
-export const Bar = styled.div<Props>`
+
+type BarProps = {
+  height: number;
+};
+
+export const Bar = styled.div<BarProps>`
   width: 34px;
   height: calc(2.9 * ${(props) => props.height}px);
   border-radius: 4px;
   background-color: var(--soft-red);
 
-  &:hover,
+  &:hover {
+    filter:brightness(1.2);
+  }
+
   &:active,
   &:focus {
     background-color: var(--cyan);
@@ -60,7 +66,13 @@ export const BarWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+
+  &:hover ${PopUp}{
+    visibility: visible;
+  }
 `;
+
+
 
 export const CardSummary = styled.div`
   padding-top: 24px;

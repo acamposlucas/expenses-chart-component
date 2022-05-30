@@ -38,13 +38,13 @@ export function MainContent() {
           {data.map(({ day, amount }) => {
             return (
               <BarWrapper key={uuidv4()}>
-                {!hidden ? <PopUp key={uuidv4()}>${amount}</PopUp> : null}
                 <Bar
                   height={amount}
                   role="button"
-                  aria-pressed="false"
                   onClick={() => setHidden((e) => !e)}
-                />
+                >
+                  <PopUp>${amount}</PopUp>
+                </Bar>
                 <span>{day}</span>
               </BarWrapper>
             );
