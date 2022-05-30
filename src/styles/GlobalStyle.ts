@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     :root {
@@ -25,4 +25,10 @@ export const GlobalStyle = createGlobalStyle`
         background-color: var(--cream);
         padding: 2rem 0;
     }
+`;
+
+export const Container = styled.div`
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
 `;

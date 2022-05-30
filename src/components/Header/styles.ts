@@ -5,12 +5,10 @@ export const Container = styled.header`
   background-color: var(--soft-red);
   border-radius: 14px;
   color: #fff;
-  margin: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 550px;
-  min-width: 345px;
+  width: 100%;
 
   .balance {
     span {
