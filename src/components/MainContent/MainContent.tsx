@@ -12,7 +12,6 @@ import {
 
 export function MainContent() {
   const [data, setData] = useState([]);
-  const [hidden, setHidden] = useState(true);
 
   useEffect(() => {
     fetch("/api/data")
@@ -41,7 +40,6 @@ export function MainContent() {
                 <Bar
                   height={amount}
                   role="button"
-                  onClick={() => setHidden((e) => !e)}
                 >
                   <PopUp>${amount}</PopUp>
                 </Bar>

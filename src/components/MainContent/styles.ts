@@ -36,20 +36,31 @@ export const PopUp = styled.div`
   padding: 0.3rem;
   border-radius: 4px;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   top: -35px;
-  z-index: 100;
-  `;
-
+  z-index: 100 !important;
+`;
 
 type BarProps = {
   height: number;
 };
 
-export const Bar = styled.div<BarProps>`
+export const Bar = styled.button<BarProps>`
   width: 34px;
+  border: none;
   height: calc(2.9 * ${(props) => props.height}px);
   border-radius: 4px;
   background-color: var(--soft-red);
+  position: relative;
+
+  &:hover ${PopUp}{
+    visibility: visible;
+  }
+
+  &:focus ${PopUp}{
+    visibility: visible;
+  }
 
   &:hover {
     filter:brightness(1.2);
@@ -65,11 +76,8 @@ export const BarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
 
-  &:hover ${PopUp}{
-    visibility: visible;
-  }
+
 `;
 
 
