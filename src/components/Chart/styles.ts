@@ -7,11 +7,12 @@ export const ChartContainer = styled.div`
   padding-bottom: 24px;
   align-items: end;
   grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
   width: 100%;
   border-bottom: 3px solid var(--cream);
 `;
 
-export const PopUp = styled.div`
+export const PopUp = styled.span`
   visibility: hidden;
   background-color: var(--dark-brown);
   color: #fff;
@@ -22,7 +23,7 @@ export const PopUp = styled.div`
   transform: translateX(-50%);
   top: -35px;
   z-index: 100 !important;
-  font-family: "DM Sans", sans-serif;
+  font-family: inherit;
 `;
 
 type BarProps = {
@@ -37,6 +38,7 @@ export const Bar = styled.button<BarProps>`
   background-color: var(--soft-red);
   position: relative;
   cursor: pointer;
+  font-family: "DM Sans", sans-serif;
 
   &:hover ${PopUp},&:focus ${PopUp} {
     visibility: visible;

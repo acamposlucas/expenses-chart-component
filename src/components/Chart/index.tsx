@@ -10,8 +10,8 @@ export function Chart({ data }: ChartProps) {
       {data.map(({ day, amount }) => {
         return (
           <BarWrapper key={uuidv4()}>
-            <Bar height={amount} role="button">
-              <PopUp>${amount}</PopUp>
+            <Bar height={amount} aria-labelledby={`$${amount}`}>
+              <PopUp id={`$${amount}`}>${amount}</PopUp>
             </Bar>
             <span>{day}</span>
           </BarWrapper>
